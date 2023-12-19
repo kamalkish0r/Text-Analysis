@@ -60,10 +60,10 @@ def get_dictionary():
     print(f'{len(negative_words)} negative words')
 
 def count_syllables(word):
-    c = 0
     vowels = 'aeiou'
-    l = re.findall(f'(?!e$)(?!es$)(?!ed$)[{vowels}]', word, re.I)
-    return len(l)
+    syllables = re.findall(f'(?!e$)(?!es$)(?!ed$)[{vowels}]', word, re.I)
+    print(word, syllables)
+    return len(syllables)
 
 def analyse(article):
     """
@@ -259,7 +259,7 @@ if __name__ == '__main__':
     get_dictionary()
 
     # step 2: get all the articles
-    get_all_articles()
+    # get_all_articles()
 
     print('\n\nfetched all articles\n\n')
 
